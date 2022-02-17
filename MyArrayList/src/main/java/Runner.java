@@ -11,9 +11,9 @@ public class Runner {
         //или так
         Collections.addAll(x, newArray);
         //или так
-        for(int i = 0; i <= x.length; i++) {
-            newArray[i].add(x[i]);
-        }
+//        for(int i = 0; i <= x.length; i++) {
+//            newArray[i].add(x[i]);
+//        }
 
         System.out.println("Стало");
         System.out.println(Arrays.toString(x));

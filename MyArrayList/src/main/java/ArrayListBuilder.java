@@ -40,7 +40,7 @@ public class ArrayListBuilder implements Comparable<ArrayListBuilder> {
         // разделить на подмассивы, который больше и меньше опорного элемента array[i] < focus
         int i = low, j = high;
         while (i <= j) {
-            if (array[i].compareTo(focus) > 0) {
+            while (array[i].compareTo(focus) > 0) {
                 i++;
             }
 

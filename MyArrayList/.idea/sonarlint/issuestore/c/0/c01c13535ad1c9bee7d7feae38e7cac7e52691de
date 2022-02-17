@@ -1,0 +1,9 @@
+
+m
+java:S3008/"WRename this field "ARRAY_LENGTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ù·ý¦
+:
+java:S1659I"Declare "j" on a separate line.(»¼ûîûÿÿÿÿ
+n
+java:S1104/"XMake ARRAY_LENGTH a static final constant or non-public and provide accessors if needed.(ù·ý¦
+H
+java:S1444/"2Make this "public static ARRAY_LENGTH" field final(ù·ý¦
