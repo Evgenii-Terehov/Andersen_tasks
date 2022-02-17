@@ -12,6 +12,7 @@ public class ArrayListBuilder implements Comparable<ArrayListBuilder> {
             resize((array.length * 3) / 2 + 1);
         }
         array[pointer++] = item;
+        quickSort(array, 0, array.length);
     }
 
     //удаление элемента списка по индексу

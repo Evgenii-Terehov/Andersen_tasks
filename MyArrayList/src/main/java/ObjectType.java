@@ -3,7 +3,7 @@ import java.util.Random;
 public class ObjectType {
     private String stringItem = "";
     private char charItem;
-    private int intItem;
+    private Integer intItem;
 
 
     public ObjectType(String item) {
