@@ -1,9 +1,45 @@
 import java.util.Random;
 
-public class Type {
+public class ObjectType {
+    private String stringItem = "";
+    private char charItem;
+    private int intItem;
 
-    public Type() {
 
+    public ObjectType(String item) {
+        this.stringItem = item;
+    }
+
+    public ObjectType(char item) {
+        this.charItem = item;
+    }
+
+    public ObjectType(int item) {
+        this.intItem = item;
+    }
+
+    public String getStringItem() {
+        return stringItem;
+    }
+
+    public void setStringItem(String stringItem) {
+        this.stringItem = stringItem;
+    }
+
+    public char getCharItem() {
+        return charItem;
+    }
+
+    public void setCharItem(char charItem) {
+        this.charItem = charItem;
+    }
+
+    public int getIntItem() {
+        return intItem;
+    }
+
+    public void setIntItem(int intItem) {
+        this.intItem = intItem;
     }
 }
 
