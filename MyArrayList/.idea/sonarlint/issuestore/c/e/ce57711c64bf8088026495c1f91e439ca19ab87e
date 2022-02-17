@@ -1,0 +1,10 @@
+
+[
+java:S1854"9Remove this useless assignment to local variable "array".(ö·Äãþÿÿÿÿ8ÇÚß¡ð/
+L
+java:S1481"*Remove this unused "array" local variable.(ö·Äãþÿÿÿÿ8ÑÚß¡ð/
+>
+java:S1481	"(Remove this unused "obj" local variable.(™í‹Ž
+]	java:S125
+"<This block of commented-out lines of code should be removed.(†ÕÌ¿þÿÿÿÿ8×Úß¡ð/
+Q	java:S125"<This block of commented-out lines of code should be removed.(Ù»Ã¿
