@@ -1,21 +1,43 @@
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Iterator;
 
-public class ArrayListBuilder implements Comparable<ArrayListBuilder> {
+public class ArrayListBuilder implements ArrayListInterface {
 
     private static final int SIZE = 9;
-    private ArrayListBuilder[] array = new ArrayListBuilder[SIZE];
+    private ListOfObjects[] array;
     private int pointer = 0;
 
+    public ArrayListBuilder(int size) {
+        this.array = new ListOfObjects[SIZE];
+    }
+
+    public ArrayListBuilder() {
+        this.array = new ListOfObjects[SIZE];
+    }
+
     //добавление элемента в список
-    public void add(ArrayListBuilder item) {
+    @Override
+    public boolean add(ListOfObjects item) {
         //при переполнении массива, увеличит размер в 1.5 раза + 1
         if(pointer == array.length - 1) {
             resize((array.length * 3) / 2 + 1);
         }
         array[pointer++] = item;
-        quickSort(array, 0, array.length);
+        return true;
+    }
+
+    //возвращает размер списка
+    @Override
+    public int size() {
+        if (array.length == 0) {
+
+        }
+        return array.length;
     }
 
     //удаление элемента списка по индексу
+    @Override
     public void remove(int index) {
         if (pointer - index >= 0) {
             System.arraycopy(array, index + 1, array, index, pointer - index);
@@ -26,52 +48,36 @@ public class ArrayListBuilder implements Comparable<ArrayListBuilder> {
     }
 
     //изменение размера массива
-    private void resize(int newLength) {
-        ArrayListBuilder[] newArray = new ArrayListBuilder[newLength];
+    @Override
+    public void resize(int newLength) {
+        ListOfObjects[] newArray = new ListOfObjects[newLength];
         System.arraycopy(array, 0, newArray, 0, pointer);
         array = newArray;
     }
 
-    public void quickSort(ArrayListBuilder[] array, int low, int high) {
-        // выбрать опорный элемент
-        int middle = low + (high - low) / 2;
-        ArrayListBuilder focus = array[middle];
-
-        // разделить на подмассивы, который больше и меньше опорного элемента array[i] < focus
-        int i = low, j = high;
-        while (i <= j) {
-            while (array[i].compareTo(focus) > 0) {
-                i++;
-            }
-
-            while (array[j].compareTo(focus) <= 0) {
-                j--;
-            }
-
-            if (i <= j) {//меняем местами
-                ArrayListBuilder temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-                i++;
-                j--;
-            }
-        }
-
-        // вызов рекурсии для сортировки левой и правой части
-        if (low < j)
-            quickSort(array, low, j);
-
-        if (high > i)
-            quickSort(array, i, high);
+    @Override
+    public void sorting(Comparator<ListOfObjects> comparator) {
+        Arrays.sort(array, 0, SIZE, comparator);
     }
 
     //возвращает элемент списка по индексу.
-    public ArrayListBuilder get(int index) {
+    public ListOfObjects getElement(int index) {
         return array[index];
     }
 
     @Override
-    public int compareTo(ArrayListBuilder o) {
-        return 0;
+    public Iterator<ListOfObjects> iterator() {
+        return new Iterator<ListOfObjects>() {
+            int index = 0;
+            @Override
+            public boolean hasNext() {
+                return index < array.length;
+            }
+
+            @Override
+            public ListOfObjects next() {
+                return array[index++];
+            }
+        };
     }
 }
