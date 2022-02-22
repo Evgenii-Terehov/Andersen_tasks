@@ -7,7 +7,6 @@ import java.util.Iterator;
 public class MyArrayList<E>  implements IMyArrayList<E> {
 
     private E[] values;
-    private E[] makeEmpty = (E[]) new Object[0];
     private Comparator<E> comparator;
 
     /**
@@ -84,7 +83,7 @@ public class MyArrayList<E>  implements IMyArrayList<E> {
      */
     @Override
     public void clear() {
-        values = makeEmpty;
+        values = (E[]) new Object[0];
     }
     /**
      * имплементированный метод интерфейса Iterable для работы со списком
